@@ -2,21 +2,25 @@ package com.formation.user;
 
 import java.text.MessageFormat;
 
-import com.formation.service.FeedbackFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.formation.service.IFeedback;
 
 /**
  * Class to make interactions with the user
  */
+@Component
 public class UserInteraction {
-	private FeedbackFactory factory;
+	@Autowired
+	IFeedback Feedback;
 
-	public void setFactory(FeedbackFactory factory) {
-		this.factory = factory;
+	public IFeedback getFeedback() {
+		return Feedback;
 	}
 
-	public UserInteraction() {
-		// feedback = factory.getFeedback();
-
+	public void setFeedback(IFeedback feedback) {
+		Feedback = feedback;
 	}
 
 	/**
@@ -25,7 +29,7 @@ public class UserInteraction {
 	 * @param name
 	 */
 	public void sayHello(String name) {
-		factory.getFeedback().say(MessageFormat.format("Hello {0} !", name));
+		Feedback.say(MessageFormat.format("Hello {0} !", name));
 	}
 
 	/**
@@ -34,6 +38,6 @@ public class UserInteraction {
 	 * @param name
 	 */
 	public void sayGoodBye(String name) {
-		factory.getFeedback().say(MessageFormat.format("Goodbye {0} !", name));
+		Feedback.say(MessageFormat.format("Goodbye {0} !", name));
 	}
 }
