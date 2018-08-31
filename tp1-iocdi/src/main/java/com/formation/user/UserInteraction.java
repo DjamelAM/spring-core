@@ -48,8 +48,8 @@ public class UserInteraction {
 		Feedback.say(MessageFormat.format("Goodbye {0} !", name));
 	}
 
-	public int sayTheCaptainAgeForAFamousThreeMast() {
-		return Feedback.giveMeTheCaptainAge(10, 3);
+	public int sayTheCaptainAgeForAFamousThreeMast(float boatSize, int nbMast) {
+		return Feedback.giveMeTheCaptainAge(boatSize, nbMast);
 	}
 
 }
