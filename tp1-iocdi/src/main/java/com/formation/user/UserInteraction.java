@@ -1,5 +1,6 @@
 package com.formation.user;
 
+import java.io.IOException;
 import java.text.MessageFormat;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,17 +28,24 @@ public class UserInteraction {
 	 * To say hello to the user named <code>name</code>
 	 *
 	 * @param name
+	 * @return
+	 * @return
+	 * @throws IOException
 	 */
-	public void sayHello(String name) {
+	public void sayHello(String name) throws IOException {
 		Feedback.say(MessageFormat.format("Hello {0} !", name));
+
 	}
 
 	/**
 	 * To say goodbye to the user named <code>name</code>
 	 *
 	 * @param name
+	 * @return
+	 * @throws IOException
 	 */
-	public void sayGoodBye(String name) {
+	public void sayGoodBye(String name) throws IOException {
 		Feedback.say(MessageFormat.format("Goodbye {0} !", name));
 	}
+
 }

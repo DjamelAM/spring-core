@@ -12,14 +12,10 @@ public class AppConfig {
 	@Bean
 	public IFeedback spring() {
 		return new FeedbackToConsole();
-
 	}
 
 	@Bean
 	public UserInteraction UserBean() {
-
 		return new UserInteraction();
-
 	}
-
 }
