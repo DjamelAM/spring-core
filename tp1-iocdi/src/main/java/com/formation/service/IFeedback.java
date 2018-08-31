@@ -8,4 +8,6 @@ import java.io.IOException;
  */
 public interface IFeedback {
 	public void say(String something) throws IOException;
+
+	public int giveMeTheCaptainAge(float boatSize, int nbMast);
 }
